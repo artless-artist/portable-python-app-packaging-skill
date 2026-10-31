@@ -46,44 +46,28 @@
 | GitHub Copilot | `~/.copilot/skills` |
 | Codex / Cline / Warp / Zed / Kimi | `~/.agents/skills`（共用） |
 
-项目级同理，换成 `<项目>/.claude/skills` 之类。
+如果只希望在一个项目中使用这个 skill , 换成 `<项目>/.claude/skills` 之类。
 
 ### 2. 用安装脚本
 
-| 平台 | 操作 |
-|---|---|
-| Windows | 双击 `install.bat` |
-| macOS / Linux | `sh install.sh` |
+双击 `install.bat` 
 
 按提示走三步：选用户级还是项目级 → 选装给哪些工具（本机已装的会自动列出来，回车即默认）→ 确认。全程只复制文件，中途关窗口就什么都不改。
 
 ### 3. 让 AI 代装
 
-解压后把整个目录交给 agent（拖进对话，或直接说路径），然后：
+下载后把 Skill.md 交给 agent，然后说：
 
-> 把这个目录里的 SKILL.md 装到你自己的 skills 目录
+> 安装这个 SKILL.md
 
-### 4. 命令安装
-
-需要 Node，且这些文件已经在一个公开仓库里：
-
-```bash
-npx skills add <你的用户名>/portable-python-app-packaging -g
-```
-
-`-g` 表示装到用户级，去掉就是装到当前项目。
 
 ## 使用方法
 
 装好之后不用记任何命令，直接把需求说出来，Agent 会自己去读这份手册：
 
-> 帮我把这个项目做成便携整合包，双击就能用，不要依赖本机 Python。
+> 帮我把这个项目做成便携整合包，双击就能用，不要依赖本机环境
 
-> 我这个包拿到别人电脑上，一选 VLM 就报 `No mapping for the Unicode character exists in the target multi-byte code page`，什么原因？
-
-> 这个包能不能自动用显卡？帮我实测一下，别凭印象答。
-
-> 我想把它分享出去，应该上传哪些文件？
+或者不必找到具体的项目，可以先说所需功能，待AI找到项目后再说将这个项目制作为整合包
 
 会被自动匹配的说法：便携化、便携整合包、一键启动、免环境、绿色版、不依赖本机环境、portable、python-build-standalone、硬件加速、GPU 加速、分享整合包、打包上传、首启自举、分发边界。
 
